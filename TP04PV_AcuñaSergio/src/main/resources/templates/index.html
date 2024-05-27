@@ -3,23 +3,51 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/styles.css">
 	<title>TP04 Programacion Visual</title>
 </head>
 <body>
 	
 	<header>
-		<h4>Hola JAVA</h4>
+		<div th:replace="~{fragments/cabecera :: header}">
+		</div>
+		<div th:replace="~{fragments/navegacion :: navbar}">
+		</div>
 	</header>
 	
-	<div>
-		<nav></nav>
+	
+	<div class="body">
+		
+		<aside th:replace="~{fragments/barraLateral :: sidebar}">
+		</aside>
+	
+		<main class="main">
+			<section>
+				<h1>UNJU</h1>
+				<p>La Universidad Nacional de Jujuy pretende reflejar los años de trabajo, constancia y esfuerzo de los hombres y mujeres que la integraron e integran actualmente. Es por ello que pretendemos exhibir sus principales logros desde las diversas instituciones que la componen. Lejos de un ideal triunfalista -o de la Historia como progreso- es necesario comprender que, desde su creación en 1972 hasta la actualidad, nuestra universidad atravesó un período de nuestra historia marcado por debacles y crisis de todo orden y que, por momentos, fue particularmente duro para la educación pública. Es en este marco -en el cual planificar y ejecutar un desarrollo a largo plazo ha resultado un gran desafío- es donde los integrantes de esta institución lograron construir, consolidar y expandir nuestra universidad. Es por ello que esta Historia de la Universidad Nacional de Jujuy les está dedicada.</p>
+			</section>
+			
+			<section>
+				<h1>UNJU Noticias</h1>
+				<h4>LA UNJU Y EL MUNICIPIO DE PALPALÁ LANZARON EL PROGRAMA CIUDADANÍA DIGITAL UNJU. CONECTANDO OPORTUNIDADES</h4>
+				<br>
+				<h4>DEL 21 AL 25 DE OCTUBRE ARGENTINA SERÁ SEDE EL 8° SIMPOSIO INTERNACIONAL DE BIOFUMIGACIÓN, ABONOS VERDES, Y CULTIVOS DE COBERTURA</h4>
+				<br>
+				<h4>INVITAN A PARTICIPAR DEL CICLO DE TALLERES "SAN ANTONIO GASTRONÓMICO"</h4>
+			</section>
+		</main>
+	
 	</div>
 	
-	<aside></aside>
-	
-	<main></main>
-	
-	<footer></footer>
+	<footer>
+		<div th:replace="~{fragments/pieDePagina :: footer}">
+		</div>
+	</footer>
 
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
 </body>
 </html>
