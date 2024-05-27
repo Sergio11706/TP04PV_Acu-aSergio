@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.header {
+	background-color: #0A4268;
+	padding: 20px;
+}
+
+.navbar-text {
+	color: white;
+	font-size: 1.5rem; 
+	font-weight: bold;
+}
+
+.text-muted {
+	font-size: 1.2rem;
+}
+
+.navegacion {
+	background-color: #053250;
+}
+
+.sidebar {
+	color: white;
+	min-height: 100vh;
+    width: 130px;
+	background-color: #082940;
+	
+}
+
+.body {
+	display: flex;
+}
+
+.main {
+	flex-grow: 1;
+    padding: 20px;
+    background-color: #E4F4FF;
+}
+
+.footer {
+	background-color: #0A4268; 
+	display: block; 
+	padding: 10px ;
+	margin: 0;
+}
+
+.aFooter {
+	text-decoration: none; 
+	color: white;
+}
