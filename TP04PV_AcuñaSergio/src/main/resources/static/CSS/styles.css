@@ -48,3 +48,11 @@
 	text-decoration: none; 
 	color: white;
 }
+
+.form {
+	background-color: #E4F4FF;
+}
+
+.cards {
+	display: inline-block; 
+}
