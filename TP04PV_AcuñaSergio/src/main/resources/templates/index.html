@@ -10,41 +10,96 @@
 <body>
 	
 	<header>
-		<div th:replace="~{fragments/cabecera :: header}">
+		<div data-th-replace="~{fragments/cabecera :: header}">
 		</div>
-		<div th:replace="~{fragments/navegacion :: navbar}">
+		<div data-th-replace="~{fragments/navegacion :: navbar}">
 		</div>
 	</header>
 	
 	
 	<div class="body">
 		
-		<aside th:replace="~{fragments/barraLateral :: sidebar}">
+		<aside data-th-replace="~{fragments/barraLateral :: sidebar}">
 		</aside>
 	
 		<main class="main">
-			<section>
+		
+			<section id="presentacion">
 				<h1>UNJU</h1>
 				<p>La Universidad Nacional de Jujuy pretende reflejar los años de trabajo, constancia y esfuerzo de los hombres y mujeres que la integraron e integran actualmente. Es por ello que pretendemos exhibir sus principales logros desde las diversas instituciones que la componen. Lejos de un ideal triunfalista -o de la Historia como progreso- es necesario comprender que, desde su creación en 1972 hasta la actualidad, nuestra universidad atravesó un período de nuestra historia marcado por debacles y crisis de todo orden y que, por momentos, fue particularmente duro para la educación pública. Es en este marco -en el cual planificar y ejecutar un desarrollo a largo plazo ha resultado un gran desafío- es donde los integrantes de esta institución lograron construir, consolidar y expandir nuestra universidad. Es por ello que esta Historia de la Universidad Nacional de Jujuy les está dedicada.</p>
 			</section>
 			
-			<section>
+			<br>
+			
+			<section id="noticias">
 				<h1>UNJU Noticias</h1>
-				<h4>LA UNJU Y EL MUNICIPIO DE PALPALÁ LANZARON EL PROGRAMA CIUDADANÍA DIGITAL UNJU. CONECTANDO OPORTUNIDADES</h4>
-				<br>
-				<h4>DEL 21 AL 25 DE OCTUBRE ARGENTINA SERÁ SEDE EL 8° SIMPOSIO INTERNACIONAL DE BIOFUMIGACIÓN, ABONOS VERDES, Y CULTIVOS DE COBERTURA</h4>
-				<br>
-				<h4>INVITAN A PARTICIPAR DEL CICLO DE TALLERES "SAN ANTONIO GASTRONÓMICO"</h4>
+				<div class="card cards" style="width: 18rem;">
+					<img src="https://noticias.unju.edu.ar/noticias/serv/notis/45764.jpg" class="card-img-top">
+					<div class="card-body">
+						<p class="card-text">PRESENTARON SUS TRABAJOS FINALES 7 NUEVOS EGRESADOS DE LA TECNICATURA EN GESTIÓN UNIVERSITARIA.</p>
+						<a href="https://noticias.unju.edu.ar/noticia.php?id=4388" class="btn btn-primary">Mas informacion</a>
+					</div>
+				</div>
+				
+				<div class="card cards" style="width: 18rem;">
+					<img src="https://noticias.unju.edu.ar/noticias/serv/notis/4574WhatsApp%20Image%202024-06-03%20at%2019.43.16.jpeg" class="card-img-top">
+					<div class="card-body">
+						<p class="card-text">HASTA EL 15 DE JUNIO PERMANECERÁN ABIERTAS LAS INSCRIPCIONES PARA EL SEMINARIO "LA INVESTIGACIÓN OPERATIVA APLICADA EN LA EMPRESA FAMILIAR RURAL”.</p>
+						<a href="https://noticias.unju.edu.ar/noticia.php?id=4386" class="btn btn-primary">Mas informacion</a>
+					</div>
+				</div>
+
+				<div class="card cards" style="width: 18rem;">
+					<img src="https://noticias.unju.edu.ar/noticias/serv/notis/4575WhatsApp%20Image%202024-06-03%20at%2019.43.16%20(1).jpeg" class="card-img-top">
+					<div class="card-body">
+						<p class="card-text">HASTA EL 20 DE JUNIO PERMANECERÁN ABIERTAS LAS INSCRIPCIONES PARA EL CURSO "SISTEMAS DE INFORMACIÓN PARA LA SOSTENIBILIDAD EN LAS ORGANIZACIONES”.</p>
+						<a href="https://noticias.unju.edu.ar/noticia.php?id=4387" class="btn btn-primary">Mas informacion</a>
+					</div>
+				</div>
+
+			</section>
+
+			<br>
+	
+			<section id="carreras">
+			
+				<h1>Oferta Academica</h1>
+				<table class="table table-info">
+					<thead>
+						<tr>
+							<th scope="col">Cs. Agrarias</th>
+							<th scope="col">Cs. Economicas</th>
+							<th scope="col">Fac. de Ingenieria</th>
+						</tr>
+					</thead>
+					<tbody class="table-group-divider">
+						<tr>
+							<td>Ingenieria Agronomica</td>
+							<td>Contador Publico</td>
+							<td>Ingenieria Industrial</td>
+						</tr>
+						<tr>
+							<td>Licenciatura en Bromatologia</td>
+							<td>Licenciatura en Administracion</td>
+							<td>Ingenieria Informatica</td>
+						</tr>
+						<tr>
+							<td>Licenciatura en Ciencias Biologicas</td>
+							<td>Licenciatura en Economia Politica</td>
+							<td>Ingenieria en Minas</td>
+						</tr>
+					</tbody>
+				</table>
 			</section>
 		</main>
 	
 	</div>
 	
-	<footer>
-		<div th:replace="~{fragments/pieDePagina :: footer}">
+	<footer id="contacto">
+		<div data-th-replace="~{fragments/pieDePagina :: footer}">
 		</div>
 	</footer>
-
+	
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

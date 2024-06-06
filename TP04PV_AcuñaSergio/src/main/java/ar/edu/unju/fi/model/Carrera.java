@@ -1,11 +1,18 @@
 package ar.edu.unju.fi.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Carrera {
 
 	private String codigo;
 	private String nombre;
 	private int anios;
 	private boolean estado;
+	
+	public Carrera() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public Carrera(String codigo, String nombre, int anios, boolean estado) {
 		super();
@@ -40,7 +47,7 @@ public class Carrera {
 		this.anios = anios;
 	}
 
-	public boolean isEstado() {
+	public boolean getEstado() {
 		return estado;
 	}
 

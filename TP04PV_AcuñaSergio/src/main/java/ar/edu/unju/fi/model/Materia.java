@@ -1,24 +1,29 @@
 package ar.edu.unju.fi.model;
 
-import ar.edu.unju.fi.constantes.Modalidad;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Materia {
 	
 	private String codigo;
 	private String nombre;
 	private String curso;
-	private Carrera carrera;
-	private Modalidad modalidad;
-	private Docente docente;
+	private String codCarrera;
+	private String modalidad;
+	private int legajoDocente;
 	
-	public Materia(String codigo, String nombre, String curso, Carrera carrera, Modalidad modalidad, Docente docente) {
+	public Materia() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Materia(String codigo, String nombre, String curso, String carrera, String modalidad, int docente) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.curso = curso;
-		this.carrera = carrera;
+		this.codCarrera = carrera;
 		this.modalidad = modalidad;
-		this.docente = docente;
+		this.legajoDocente = docente;
 	}
 
 	
@@ -46,28 +51,28 @@ public class Materia {
 		this.curso = curso;
 	}
 
-	public Carrera getCarrera() {
-		return carrera;
+	public String getCodCarrera() {
+		return codCarrera;
 	}
 
-	public void setCarrera(Carrera carrera) {
-		this.carrera = carrera;
+	public void setCodCarrera(String carrera) {
+		this.codCarrera = carrera;
 	}
 
-	public Modalidad getModalidad() {
+	public String getModalidad() {
 		return modalidad;
 	}
 
-	public void setModalidad(Modalidad modalidad) {
+	public void setModalidad(String modalidad) {
 		this.modalidad = modalidad;
 	}
 
-	public Docente getDocente() {
-		return docente;
+	public int getLegajoDocente() {
+		return legajoDocente;
 	}
 
-	public void setDocente(Docente docente) {
-		this.docente = docente;
+	public void setLegajoDocente(int docente) {
+		this.legajoDocente = docente;
 	}
 
 	
