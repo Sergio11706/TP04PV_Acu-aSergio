@@ -35,9 +35,9 @@
 					<td data-th-text="${materia.codigo}"></td>
 					<td data-th-text="${materia.nombre}"></td>
 					<td data-th-text="${materia.curso}"></td>
-					<td data-th-text="${materia.codCarrera}"></td>
+					<td data-th-text="${materia.carrera.nombre}+'-'+${materia.carrera.anios}+'-'+${materia.carrera.estado}"></td>
 					<td data-th-text="${materia.modalidad}"></td>
-					<td data-th-text="${materia.legajoDocente}"></td>
+					<td data-th-text="${materia.docente.nombre}+'-'+${materia.docente.apellido}+'-'+${materia.docente.email}+'-'+${materia.docente.telefono}"></td>
 					<td >
 						<a data-th-href="@{'/eliminarMateria/' + ${materia.codigo}}" class="btn btn-danger">Eliminar</a>
 						
