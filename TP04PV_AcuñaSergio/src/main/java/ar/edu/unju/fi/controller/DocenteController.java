@@ -49,10 +49,10 @@ public class DocenteController {
 	
 	@GetMapping("/modificarDocente/{legajo}")
     public ModelAndView formModificarDocente(@PathVariable("legajo") int legajo) {
-        Docente docente1 = ListadoDocentes.buscarDocente(legajo);
+        docente = ListadoDocentes.buscarDocente(legajo);
 
         ModelAndView modelView = new ModelAndView("modificarDocente");
-        modelView.addObject("docenteModificado", docente1);
+        modelView.addObject("docenteModificado", docente);
         
         return modelView;
     }

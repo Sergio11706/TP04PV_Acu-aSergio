@@ -36,13 +36,17 @@
 			</div>
 			
 			<div class="mb-3">
-				<label for="codCarrera" class="form-label">Codigo de la Carrera</label>
-				<input type="email" class="form-control" id="codCarrera" data-th-field="*{codCarrera}">
+				<label for="carrera" class="form-label">Carrera</label>
+				<select class="form-select" id="carrera" data-th-field="*{carrera.codigo}">    
+					<option data-th-each="c : ${carreras}" data-th-value="${c.codigo}" data-th-text="${c.nombre}+'-'+${c.anios}+'-'+${c.estado}"></option>   
+				</select> 
 			</div>
 			
 			<div class="mb-3">
-				<label for="legajoDocente" class="form-label">Legajo del Docente</label>
-				<input type="number" class="form-control" id="legajoDocente" data-th-field="*{legajoDocente}">
+				<label for="docente" class="form-label">Docente</label>
+				<select class="form-select" id="docente" data-th-field="*{docente.legajo}">    
+					<option data-th-each="d : ${docentes}" data-th-value="${d.legajo}" data-th-text="${d.nombre}+'-'+${d.apellido}+'-'+${d.email}+'-'+${d.telefono}"></option>   
+				</select> 
 			</div>
 			
 			<div class="mb-3">
@@ -53,8 +57,7 @@
 				</select>
 			</div>
 			
-			<button type="submit" class="btn btn-success">Guardar</button>
-			<a data-th-href="@{'/listaDeMaterias'}" class="btn btn-warning">Ver Lista</a>
+			<button type="submit" class="btn btn-success">Modificar</button>
 		</form>
 	</div>
 	

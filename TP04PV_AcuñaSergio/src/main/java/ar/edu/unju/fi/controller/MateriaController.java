@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.unju.fi.collections.ListadoCarreras;
+import ar.edu.unju.fi.collections.ListadoDocentes;
 import ar.edu.unju.fi.collections.ListadoMaterias;
+import ar.edu.unju.fi.model.Carrera;
+import ar.edu.unju.fi.model.Docente;
 import ar.edu.unju.fi.model.Materia;
 
 
@@ -18,16 +22,32 @@ public class MateriaController {
 	@Autowired
 	Materia materia = new Materia();
 	
+	@Autowired
+	Docente docente = new Docente();
+	
+	@Autowired
+	Carrera carrera = new Carrera();
+	
 	@GetMapping("/formularioMateria")
 	public ModelAndView getFormMateria() {
+		
 		ModelAndView modelView = new ModelAndView("formMateria");
+		
 		modelView.addObject("nuevaMateria", materia);
-	
+		modelView.addObject("carreras", ListadoCarreras.listarCarreras());
+		modelView.addObject("docentes", ListadoDocentes.listarDocentes());
+		
 		return modelView;
 	}
 	
 	@PostMapping("/guardarMateria")
 	public ModelAndView setFormMateria(@ModelAttribute("nuevaMateria") Materia m) {
+		
+		docente = ListadoDocentes.buscarDocente(m.getDocente().getLegajo());
+		carrera = ListadoCarreras.buscarCarrera(m.getCarrera().getCodigo());
+		
+		m.setCarrera(carrera);
+		m.setDocente(docente);
 		
 		ListadoMaterias.agregarMateria(m);
 		
@@ -44,16 +64,25 @@ public class MateriaController {
 	
 	@GetMapping("/modificarMateria/{codigo}")
 	public ModelAndView formModificarMateria(@PathVariable("codigo") String cod) {
-		Materia materia1 = ListadoMaterias.buscarMateria(cod);
+		materia = ListadoMaterias.buscarMateria(cod);
 		
 		ModelAndView modelView = new ModelAndView("modificarMateria");
-		modelView.addObject("materiaModificada", materia1);
-	
+		
+		modelView.addObject("materiaModificada", materia);
+		modelView.addObject("carreras", ListadoCarreras.listarCarreras());
+		modelView.addObject("docentes", ListadoDocentes.listarDocentes());
+		
 		return modelView;
 	}
 	
 	@PostMapping("/modificarMateria")
 	public ModelAndView modificarMateria(@ModelAttribute("materiaModificada") Materia m) {
+		
+		docente = ListadoDocentes.buscarDocente(m.getDocente().getLegajo());
+		carrera = ListadoCarreras.buscarCarrera(m.getCarrera().getCodigo());
+		
+		m.setCarrera(carrera);
+		m.setDocente(docente);
 		
 		ListadoMaterias.modificarMateria(m);
 		
@@ -62,6 +91,7 @@ public class MateriaController {
 	
 	@GetMapping("/listaDeMaterias")
 	public ModelAndView mostrarLista() {
+		
 		ModelAndView modelView = new ModelAndView("listaDeMaterias");
 		modelView.addObject("listadoMaterias", ListadoMaterias.listarMaterias());
 	

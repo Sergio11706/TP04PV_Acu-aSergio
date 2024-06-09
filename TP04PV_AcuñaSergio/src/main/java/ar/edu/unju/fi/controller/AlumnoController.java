@@ -43,10 +43,10 @@ public class AlumnoController {
 	
 	@GetMapping("/modificarAlumno/{dni}")
 	public ModelAndView formModificarAlumnoa(@PathVariable("dni") String dni) {
-		Alumno alumno1 = ListadoAlumnos.buscarAlumno(dni);
+		alumno = ListadoAlumnos.buscarAlumno(dni);
 		
 		ModelAndView modelView = new ModelAndView("modificarAlumno");
-		modelView.addObject("alumnoModificado", alumno1);
+		modelView.addObject("alumnoModificado", alumno);
 	
 		return modelView;
 	}

@@ -43,10 +43,10 @@ public class CarreraController {
 	
 	@GetMapping("/modificarCarrera/{codigo}")
 	public ModelAndView formModificarCarrera(@PathVariable("codigo") String cod) {
-		Carrera carrera1 = ListadoCarreras.buscarCarrera(cod);
+		carrera = ListadoCarreras.buscarCarrera(cod);
 		
 		ModelAndView modelView = new ModelAndView("modificarCarrera");
-		modelView.addObject("carreraModificada", carrera1);
+		modelView.addObject("carreraModificada", carrera);
 	
 		return modelView;
 	}
